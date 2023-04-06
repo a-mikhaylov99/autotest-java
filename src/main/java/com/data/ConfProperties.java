@@ -11,7 +11,7 @@ public class ConfProperties {
     static {
         try {
             //указание пути до файла с настройками
-            fileInputStream = new FileInputStream("src/test/resources/conf.properties");
+            fileInputStream = new FileInputStream("src/main/java/com/data/git.data.properties");
             PROPERTIES = new Properties();
             PROPERTIES.load(fileInputStream);
         } catch (IOException e) {

@@ -21,7 +21,7 @@ public class LoginTest {
         chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*", "ignore-certificate-errors");
         driver = new ChromeDriver(chromeOptions);
-        System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty("chromedriver"));
+        System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
         driver.manage().window().maximize();
 
         loginPage = new LoginPage(driver);

@@ -34,11 +34,11 @@ public class LoginTest {
     public void loginTest() {
         loginPage.login(
                 ConfProperties.getProperty("login"),
-                ConfProperties.getProperty("sashacleverboy1999")
+                ConfProperties.getProperty("password")
                 );
         mainPage.openUserMenu();
         String login = mainPage.getLoginText();
-        Assert.assertEquals("a-mikhaylov99", login);
+        Assert.assertEquals(ConfProperties.getProperty("login"), login);
     }
 
     @After

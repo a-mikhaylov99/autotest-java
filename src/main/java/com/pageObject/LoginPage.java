@@ -24,6 +24,10 @@ public class LoginPage extends PageObject {
         return By.xpath("//*[@type=\"submit\"]");
     }
 
+    private By getErrorMessage() {
+        return By.xpath("//div[@id=\"js-flash-container\"]");
+    }
+
     public void login(String userName, String password) {
         WebElement getLoginField = this.webDriver.findElement(getLoginField());
         WebElement getPassword = this.webDriver.findElement(getPassword());
@@ -32,6 +36,12 @@ public class LoginPage extends PageObject {
         getPassword.click();
         getPassword.sendKeys(password);
         getSubmitButton.click();
+    }
+
+    public Boolean errorMessageIsExist() {
+        WebElement getErrorMessage = this.webDriver.findElement(getErrorMessage());
+        this.waitForVisibilityElement(getErrorMessage());
+        return getErrorMessage.isDisplayed();
     }
 
     @Override
